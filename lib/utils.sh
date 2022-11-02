@@ -7,6 +7,14 @@ check_cmd() {
     fi
 }
 
+check_no_cmd() {
+    if [ "$(command -v "$1")" ]; then
+        app=$1
+        redprint "It seems like you already have ${app}. Skipping."
+        exit 1
+    fi
+}
+
 # bash version check
 check_bash() {
     # If you are using Bash, check Bash version

@@ -12,8 +12,16 @@ parser_definition() {
     cmd cmd2 -- "CMD2 description."
     cmd text_example -- "Print different type of texts."
     cmd create -- "Create this and that."
+    cmd automata -- "Setup development environment automatically."
+    cmd installer -- "Install Platform-Specific installer."
+    cmd version_control_tools -- "Install Version Control Tools."
 
     msg -- '' "Examples:
+
+    Display the version:
+    $SCRIPT_NAME --version
+    Display help:
+    $SCRIPT_NAME -h | --help
     
     cmd1 
     $SCRIPT_NAME cmd1
@@ -21,9 +29,12 @@ parser_definition() {
     $SCRIPT_NAME cmd2
     text_example
     $SCRIPT_NAME text_example
-    Display the version:
-    $SCRIPT_NAME --version
-    Display help:
-    $SCRIPT_NAME -h | --help
+
+    Automate a big part of machine setup:
+    $SCRIPT_NAME automata
+    Install Platform-Specific installer to ease other installations:
+    $SCRIPT_NAME installer
+    Install version control tools:
+    $SCRIPT_NAME version_control_tools
 "
 }
