@@ -14,6 +14,10 @@ Help
 
 ## Philosophy
 
+- Make almost every call to be idempotent
+- Ease setup with a call to `./my_setup automata`
+- Aim to make it Cross-Platform by listing functionalities of installed packages / tools instead of the names (unless the software is itself Cross-Platform)
+
 ## TODO
 
 - [ ] Remove unnecessary shellcheck disables for my setup
