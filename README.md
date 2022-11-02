@@ -1,24 +1,23 @@
-# Shellscript starter
+# my_setup Automation Script (evolving!)
 
-[Please read the article]()
+## Quick start (for my future reference?)
 
-## Getting started
+Automatic setup
+````
+./my_setup automata
+````
 
-Clone or download the repo.
+Help
+````
+./my_setup -h
+````
 
-## What in this?
+## Philosophy
 
-- Unit test
-- Structure
-- Sample commands
-- Utils (text, banner)
-- Shell and Bash helpers
+## TODO
 
-## Credits
+- [ ] Remove unnecessary shellcheck disables for my setup
 
-- [Shellspec](https://github.com/shellspec/shellspec) for unit testing
-- [getoptions](https://github.com/ko1nksm/getoptions) for option parser
-- [readlinkf](https://github.com/ko1nksm/readlinkf) for POSIX compliant readlink -f
-- [Bash helpers](https://github.com/dylanaraps/pure-bash-bible)
-- [Shell helpers](https://github.com/dylanaraps/pure-sh-bible)
-- [Banners](https://github.com/yousefvand/shellman)
+## Other Details
+
+[Please read the Medium article (*member-only*) by Shinichi Okada](https://medium.com/mkdir-awesome/a-shell-script-starter-for-small-to-large-projects-d9996f0cce83) and his original repo (please check the forked link).
