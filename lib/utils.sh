@@ -24,6 +24,20 @@ check_bash() {
     fi
 }
 
+# to-do aggregation
+manual_todo() {
+    if [[ -f "$todo_file" ]]; then
+         sed -i '' -e "/$@/d" $todo_file
+    fi
+    echo $@ >> $todo_file
+}
+
+# not implemented
+not_implemented() {
+    redprint "This functionality is not implemented yet. You have reached a placeholder function."
+    exit 2
+}
+
 ### Colors ##
 ESC=$(printf '\033')
 RESET="${ESC}[0m"

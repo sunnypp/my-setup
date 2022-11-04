@@ -9,9 +9,7 @@ VERSION="0.0.1"
 SCRIPT_NAME=$(basename "$0")
 
 # Set variables
-VAR1="VAR1"
-VAR2="VAR2"
-VAR3="VAR3"
+TODO_NAME="todo.md"
 
 # Keep readlinkf function
 readlinkf() {
@@ -46,6 +44,7 @@ readlinkf() {
 
 self=$(readlinkf "$0")
 script_dir=${self%/*}
+todo_file="$script_dir/$TODO_NAME"
 # For Debian APT remove line 7 to 38 and use the following line to
 # define the script_dir
 # script_dir="/usr/share/shellscript_template"
