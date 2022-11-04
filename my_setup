@@ -106,16 +106,25 @@ if [ $# -gt 0 ]; then
         fn_create "$@"
         ;;
     automata)
+        eval "$(getoptions parser_definition_automata parse "$0")"
+        parse "$@"
+        eval "set -- $REST"
         # shellcheck disable=SC1091
         . "${script_dir}/src/automata.sh"
         fn_automata
         ;;
     installer)
+        eval "$(getoptions parser_definition_installer parse "$0")"
+        parse "$@"
+        eval "set -- $REST"
         # shellcheck disable=SC1091
         . "${script_dir}/src/installer.sh"
         fn_installer
         ;;
     version_control_tools)
+        eval "$(getoptions parser_definition_version_control_tools parse "$0")"
+        parse "$@"
+        eval "set -- $REST"
         # shellcheck disable=SC1091
         . "${script_dir}/src/version_control_tools.sh"
         fn_version_control_tools
