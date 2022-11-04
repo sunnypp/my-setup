@@ -2,21 +2,31 @@
 
 ## Quick start (for my future reference?)
 
-Automatic setup
+Automatic setup :robot:
 ````
 ./my_setup automata
 ````
 
-Help
+Help :speech_balloon:
 ````
 ./my_setup -h
 ````
 
 ## Philosophy
 
-- Make almost every call to be idempotent
-- Ease setup with a call to `./my_setup automata`
-- Aim to make it Cross-Platform by listing functionalities of installed packages / tools instead of the names (unless the software is itself Cross-Platform)
+- :recycle: Make almost every call to be idempotent
+- :runner: Ease setup with a call to `./my_setup automata`
+- :globe_with_meridians: Aim to make it Cross-Platform by listing functionalities of installed packages / tools instead of the names (unless the software is itself Cross-Platform)
+- :thinking: Rather copy-and-paste in "neighbourhood" as executing replacing in Vim is quite fast when refactoring is needed
+
+## New commands introduced to `lib/utils.sh`
+
+````
+check_no_cmd    Exit if the command is already available in the current shell.
+manual_todo     Append text to `<repo-root>/todo.md`. 
+                If it is already appended before, the item is moved to the end of file instead.
+not_implemented Print out warning text that the function being called is not implemented yet.
+````
 
 ## TODO
 
