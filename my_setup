@@ -57,7 +57,20 @@ todo_file="$script_dir/$TODO_NAME"
     . "${script_dir}/lib/utils.sh"
     . "${script_dir}/lib/automata_definition.sh"
     . "${script_dir}/lib/installer_definition.sh"
+    . "${script_dir}/lib/audio_video_tools_definition.sh"
+    . "${script_dir}/lib/browsers_definition.sh"
+    . "${script_dir}/lib/calendar_definition.sh"
+    . "${script_dir}/lib/code_editor_definition.sh"
+    . "${script_dir}/lib/messaging_apps_definition.sh"
+    . "${script_dir}/lib/outliner_apps_definition.sh"
+    . "${script_dir}/lib/productivity_hacks_definition.sh"
+    . "${script_dir}/lib/shell_definition.sh"
+    . "${script_dir}/lib/system_resource_monitor_definition.sh"
+    . "${script_dir}/lib/system_settings_definition.sh"
+    . "${script_dir}/lib/terminal_definition.sh"
+    . "${script_dir}/lib/terminal_multiplexer_definition.sh"
     . "${script_dir}/lib/version_control_tools_definition.sh"
+
     . "${script_dir}/lib/cmd1_definition.sh"
     . "${script_dir}/lib/cmd2_definition.sh"
     . "${script_dir}/lib/create_definition.sh"
@@ -99,11 +112,23 @@ if [ $# -gt 0 ]; then
         fn_text
         ;;
 
-    create)                   eval_program create                   "$0" $@;;
-    automata)                 eval_program automata                 "$0" $@;;
-    installer)                eval_program installer                "$0" $@;;
+    create)                  eval_program create                  "$0" $@;;
+    automata)                eval_program automata                "$0" $@;;
+    installer)               eval_program installer               "$0" $@;;
 
-    version_control_tools)    eval_program version_control_tools    "$0" $@;;
+    audio_video_tools)       eval_program audio_video_tools       "$0" $@;;
+    browsers)                eval_program browsers                "$0" $@;;
+    calendar)                eval_program calendar                "$0" $@;;
+    code_editor)             eval_program code_editor             "$0" $@;;
+    messaging_apps)          eval_program messaging_apps          "$0" $@;;
+    outliner_apps)           eval_program outliner_apps           "$0" $@;;
+    productivity_hacks)      eval_program productivity_hacks      "$0" $@;;
+    shell)                   eval_program shell                   "$0" $@;;
+    system_resource_monitor) eval_program system_resource_monitor "$0" $@;;
+    system_settings)         eval_program system_settings         "$0" $@;;
+    terminal)                eval_program terminal                "$0" $@;;
+    terminal_multiplexer)    eval_program terminal_multiplexer    "$0" $@;;
+    version_control_tools)   eval_program version_control_tools   "$0" $@;;
 
     --) ;; # no subcommand, arguments only
     esac
