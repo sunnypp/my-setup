@@ -72,65 +72,39 @@ eval "$(getoptions parser_definition parse "$0") exit 1"
 parse "$@"
 eval "set -- $REST"
 
+eval_program() {
+    cmd=$1
+    shift
+    param=$1
+    shift
+    eval "$(getoptions parser_definition_$cmd parse $param)"
+    parse "$@"
+    eval "set -- $REST"
+    # shellcheck disable=SC1091
+    . "${script_dir}/src/${cmd}.sh"
+    eval "fn_${cmd} '$@'"
+}
+
 if [ $# -gt 0 ]; then
     cmd=$1
     shift
     case $cmd in
-    cmd1)
-        eval "$(getoptions parser_definition_cmd1 parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/cmd1.sh"
-        fn_cmd1 "$@"
-        ;;
-    cmd2)
-        eval "$(getoptions parser_definition_cmd2 parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/cmd2.sh"
-        fn_cmd2 "$@"
-        ;;
+    cmd1) eval_program cmd1 "$0" $@;;
+    cmd2) eval_program cmd2 "$0" $@;;
+
+    # this doesn't have param. Omitting it from refactoring
     text_example)
         # shellcheck disable=SC1091
         . "${script_dir}/src/text_example.sh"
         fn_text
         ;;
-    create)
-        eval "$(getoptions parser_definition_create parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/create.sh"
-        fn_create "$@"
-        ;;
-    automata)
-        eval "$(getoptions parser_definition_automata parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/automata.sh"
-        fn_automata
-        ;;
-    installer)
-        eval "$(getoptions parser_definition_installer parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/installer.sh"
-        fn_installer
-        ;;
-    version_control_tools)
-        eval "$(getoptions parser_definition_version_control_tools parse "$0")"
-        parse "$@"
-        eval "set -- $REST"
-        # shellcheck disable=SC1091
-        . "${script_dir}/src/version_control_tools.sh"
-        fn_version_control_tools
-        ;;
-        
-    # more lines
+
+    create)                   eval_program create                   "$0" $@;;
+    automata)                 eval_program automata                 "$0" $@;;
+    installer)                eval_program installer                "$0" $@;;
+
+    version_control_tools)    eval_program version_control_tools    "$0" $@;;
+
     --) ;; # no subcommand, arguments only
     esac
 fi
