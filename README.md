@@ -30,6 +30,7 @@ not_implemented Print out warning text that the function being called is not imp
 
 ## TODO
 
+- [ ] Find way to show subcommand in subcommand help, i.e. not `my_setup [...options]` but `my_setup subcmd [...options]`
 - [ ] Remove unnecessary shellcheck disables for my setup
 
 ## Other Details
