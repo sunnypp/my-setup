@@ -1,3 +1,5 @@
 fn_outliner_apps() {
-    not_implemented
+    brew install --cask workflowy
+    brew install --cask dynalist
+    brew install --cask logseq
 }
