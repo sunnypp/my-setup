@@ -1,3 +1,3 @@
 fn_terminal() {
-    not_implemented
+    brew install --cask iterm2
 }
